@@ -28,6 +28,13 @@
 #formND .form-group {
   display: none;
 }
-#header-title{
+
+#header-title {
   font-size: 30px;
+}
+
+#tableCustomer,
+#tableEmployee,
+#tableStudent {
+  display: none;
 }

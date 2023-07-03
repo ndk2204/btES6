@@ -1,7 +1,19 @@
-function DanhSachNguoiDung() {
-    this.mangND = [];
+class ListPerson {
+    constructor() {
 
-    this.themND = function (nd) {
-        this.mangND.push(nd);
+        this.student = [];
+        this.employee = [];
+        this.customer = [];
+
+        this.themST = (nd) => {
+            this.student.push(nd);
+        };
+        this.themEM = (nd) => {
+            this.employee.push(nd);
+        };
+        this.themCU = (nd) => {
+            this.customer.push(nd);
+        };
     }
 }
+export { ListPerson }

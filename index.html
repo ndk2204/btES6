@@ -122,12 +122,16 @@
 						<div class="row mb-3">
 							<div class="col-4">
 								<select class="form-control" id="locDS">
-									<option>Chọn danh sách hiển thị</option>
-									<option>Student</option>
-									<option>Employee</option>
-									<option>Customer</option>
+									<option value="">Chọn danh sách hiển thị</option>
+									<option value="Student">Student</option>
+									<option value="Employee">Employee</option>
+									<option value="Customer">Customer</option>
 								</select>
 							</div>
+							<div id="sapxep" class="col-4">
+								<button id="btnSapXep" type="button" class="btn btn-info">Sắp xếp danh sách theo họ tên</button>
+							</div>
+
 						</div>
 						<table id="tableStudent" class="table table-bordered table-hover">
 							<thead class="text-primary">
@@ -211,71 +215,71 @@
 							<div class="input-group">
 								<select class="form-control" id="doituong">
 									<option>Chọn đối tượng cần thêm</option>
-									<option onclick="clickStudent()">Student</option>
-									<option>Employee</option>
-									<option>Customer</option>
+									<option value="Student">----- Student</option>
+									<option value="Employee">----- Employee</option>
+									<option value="Customer">----- Customer</option>
 								</select>
 							</div>
 							<span class="sp-thongbao" id="tbChon"></span>
 						</div>
-						<div class="form-group">
+						
+						<div class="form-group d-all">
 							<div class="input-group">
 								<input type="number" id="ma" class="form-control input-sm" placeholder="Mã">
 							</div>
 							<span class="sp-thongbao" id="tbma"></span>
 						</div>
 
-						<div class="form-group">
+						<div class="form-group d-all">
 							<div class="input-group">
 								<input type="name" id="name" class="form-control input-sm" placeholder="Họ và tên">
 							</div>
 							<span class="sp-thongbao" id="tbTen"></span>
 						</div>
 
-						<div class="form-group">
+						<div class="form-group d-all">
 							<div class="input-group">
 								<input type="email" id="email" class="form-control input-sm" placeholder="Email">
 							</div>
-
 							<span class="sp-thongbao" id="tbEmail"></span>
 						</div>
 
-						<div class="form-group">
+						<div class="form-group d-all">
 							<div class="input-group">
 								<input type="text" id="diachi" class="form-control input-sm" placeholder="Địa chỉ">
 							</div>
 							<span class="sp-thongbao" id="tbdiachi"></span>
 						</div>
 						<!-- =============================================================================================================== -->
-						<div class="form-group">
+						<div class="form-group d-st">
 							<div class="input-group">
 								<input type="number" id="toan" class="form-control input-sm" placeholder="Điểm Toán">
 							</div>
 							<span class="sp-thongbao" id="tbtoan"></span>
 						</div>
 
-						<div class="form-group">
+						<div class="form-group d-st">
 							<div class="input-group">
 								<input type="number" id="ly" class="form-control input-sm" placeholder="Điểm Lý">
 							</div>
 							<span class="sp-thongbao" id="tbly"></span>
 						</div>
 
-						<div class="form-group">
+						<div class="form-group d-st">
 							<div class="input-group">
 								<input type="number" id="hoa" class="form-control input-sm" placeholder="Điểm Hóa">
 							</div>
 							<span class="sp-thongbao" id="tbhoa"></span>
 						</div>
 						<!-- =============================================================================================================== -->
-						<div class="form-group">
+						<div class="form-group d-em">
 							<div class="input-group">
 								<input type="number" id="songay" class="form-control input-sm"
 									placeholder="Số ngày làm việc">
 							</div>
 							<span class="sp-thongbao" id="tbsongay"></span>
 						</div>
-						<div class="form-group">
+						<div class="form-group d-em">
 							<div class="input-group">
 								<input type="number" id="luongngay" class="form-control input-sm"
 									placeholder="Lương theo ngày">
@@ -283,24 +287,24 @@
 							<span class="sp-thongbao" id="tbluongngay"></span>
 						</div>
 						<!-- =============================================================================================================== -->
-						<div class="form-group">
+						<div class="form-group d-cus">
 							<div class="input-group">
 								<input type="text" id="tencongty" class="form-control input-sm"
 									placeholder="Tên công ty">
 							</div>
 							<span class="sp-thongbao" id="tbtencongty"></span>
 						</div>
-						<div class="form-group">
+						<div class="form-group d-cus">
 							<div class="input-group">
 								<input type="number" id="hoadon" class="form-control input-sm"
 									placeholder="Giá trị hóa đơn">
 							</div>
 							<span class="sp-thongbao" id="tbhoadon"></span>
 						</div>
-						<div class="form-group">
+						<div class="form-group d-cus">
 							<div class="input-group">
 								<select class="form-control" id="danhgia">
-									<option>Đánh giá</option>
+									<option>Chọn đánh giá</option>
 									<option>Tốt</option>
 									<option>Trung bình</option>
 									<option>Kém</option>
@@ -314,7 +318,7 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer" id="modal-footer">
-					<button id="btnThemNV" type="button" class="btn btn-success">Thêm</button>
+					<button id="btnThemND" type="button" class="btn btn-success">Thêm</button>
 					<button id="btnCapNhat" type="button" class="btn btn-success">Cập nhật</button>
 					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
@@ -348,19 +352,10 @@
 			});
 		});
 	</script>
-	<!-- 
-	<script src="./class/Person.js"></script>
-	<script src="./class/Student.js"></script>
-	<script src="./class/Employee.js"></script>
-	<script src="./class/Customer.js"></script>
-	<script src="./class/ListPerson.js"></script> -->
-	<!-- 
-	<script src="./main/NhanVien.js"></script>
-	<script src="./main/DanhSachNhanVien.js"></script> -->
 
 	<script src="./main/controller.js"></script>
-	<script src="./main/Validation.js"></script>
-	<script src="./main/main.js"></script>
+	<script src="./main/validation.js"></script>
+	<script type="module" src="./main/main.js"></script>
 </body>
 
 </html>

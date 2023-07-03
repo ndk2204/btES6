@@ -1,11 +1,10 @@
 import { Person } from "./Person.js";
 class Employee extends Person {
-    constructor(soNgay, luongNgay, ...restPerson) {
+    constructor(songay, luongngay, ...restPerson) {
         super(...restPerson)
-        this.soNgay = soNgay;
-        this.luongNgay = luongNgay;
-
-        this.tinhLuong = this.soNgay * this.luongNgay
+        this.songay = songay;
+        this.luongngay = luongngay;
+        this.tinhLuong = this.songay * this.luongngay
     }
 };
 export {Employee}

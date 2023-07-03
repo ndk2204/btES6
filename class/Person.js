@@ -1,8 +1,8 @@
 export class Person {
-    constructor(hoTen, diaChi, maSo, email) {
-        this.hoTen = hoTen;
-        this.diaChi = diaChi;
-        this.maSo = maSo;
+    constructor(hoten, diachi, ma, email) {
+        this.hoten = hoten;
+        this.diachi = diachi;
+        this.ma = ma;
         this.email = email;
     }
 };
